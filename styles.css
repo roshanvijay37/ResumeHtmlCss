@@ -1,0 +1,238 @@
+
+    /* Reset some default styles */
+    body, h1, h2, h3, p, ul {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Montserrat';
+      margin: 0;
+      padding: 0;
+      background-color: #f8f8f8;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* Sidebar Styles */
+    #sidebar {
+      width: 200px;
+      background-color: #333;
+      color: white;
+      padding: 20px;
+      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      transition: width 0.5s, left 0.5s;
+      position: fixed;
+      top: 0;
+      left: 0;
+      animation: slideInLeft 0.5s ease-in-out;
+    }
+
+    #sidebar a {
+      color: white;
+      text-decoration: none;
+      margin-bottom: 10px;
+      transition: background-color 0.3s; /* Add transition for a smoother effect */
+    }
+
+    #sidebar a.active {
+      background-color: #555; /* Highlight color for active link */
+    }
+
+    /* Content Styles */
+    #content {
+      flex: 1;
+      padding: 20px;
+      transition: margin-left 0.5s;
+      animation: slideInRight 0.5s ease-in-out;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 20px;
+      animation: slideInDown 0.5s ease-in-out;
+    }
+
+    h1 {
+      color: #333;
+      margin-bottom: 5px;
+    }
+
+    /* Menu Button Styles */
+    .menu-btn {
+      cursor: pointer;
+      font-size: 20px;
+      margin-right: 20px;
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      z-index: 1;
+      animation: rotateIn 0.5s ease-in-out;
+    }
+
+    /* Section Styles */
+    section {
+      margin-bottom: 30px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      padding: 15px;
+      border-radius: 8px;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+
+    h2 {
+      color: #000;
+      border-bottom: 2px solid #333;
+      padding-bottom: 5px;
+      margin-bottom: 15px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin-left: 0;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    /* Keyframe Animations */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideInLeft {
+      from {
+        transform: translateX(-50px);
+        opacity: 0;
+      }
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideInRight {
+      from {
+        transform: translateX(50px);
+        opacity: 0;
+      }
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideInDown {
+      from {
+        transform: translateY(-50px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes rotateIn {
+      from {
+        transform: rotate(-180deg);
+        opacity: 0;
+      }
+      to {
+        transform: rotate(0);
+        opacity: 1;
+      }
+    }
+
+    /* Footer Styles */
+    footer {
+      margin-top: auto;
+      background-color: #333;
+      color: white;
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .social {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      align-items: center;
+    }
+
+    .social li:not(:last-child) {
+      margin-right: 20px;
+    }
+
+    /* Icon color for all social icons */
+	.social i {
+	  font-size: 20px; /* Set the default icon size */
+	  color: white;
+	}
+
+	/* Larger icon size for laptops */
+	@media (min-width: 768px) {
+	  .social i {
+		font-size: 24px; /* Increase the icon size for laptops */
+	  }
+	  #profile-image {
+		width: 300px; /* Adjust the width as needed */
+		height: 300px; /* Adjust the height as needed */
+		border-radius: 50%; /* Creates a circular shape for the image */
+		object-fit: cover; /* Ensures the image covers the entire container */
+		margin-bottom: 20px; /* Adjust the margin as needed */
+	  }
+	}
+
+	/* Mobile styles */
+	@media (max-width: 767px) {
+	  .social i {
+		font-size: 20px; /* Keep the same icon size on mobile */
+	  }
+	  #profile-image {
+		width: 150px; /* Corrected: Adjust the width as needed */
+		height: 150px; /* Adjust the height as needed */
+		border-radius: 50%; /* Creates a circular shape for the image */
+		object-fit: cover; /* Ensures the image covers the entire container */
+		margin-bottom: 20px; /* Adjust the margin as needed */
+	  }
+	}
+
+
+
+	/* Style for the container holding the image */
+	#profile-image-container {
+	  text-align: center; /* Center the image horizontally */
+	}
+
+	/* Apply the styles to the image inside the #profile-image-container */
+	#profile-image-container img {
+	  max-width: 100%;
+	  height: auto;
+	}
+
+	/* Adjust the space between the image and other content */
+	#content {
+	  margin-top: 20px; /* Adjust the margin as needed */
+	}
+
+	/* Media query to make the image responsive on smaller screens */
+	@media screen and (max-width: 600px) {
+	  #profile-image {
+		width: 100%; /* Make the image full width on small screens */
+		height: auto; /* Maintain aspect ratio */
+	  }
+	}
